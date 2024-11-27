@@ -28,7 +28,7 @@ const Header = ({ theme, toggleTheme, changeFont, fetchSearchHistory, searchForW
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ word }),
       });
-  
+
       if (response.ok) {
         // Update the local search history immediately
         const updatedHistory = searchHistory.filter((item) => item !== word);
@@ -43,8 +43,6 @@ const Header = ({ theme, toggleTheme, changeFont, fetchSearchHistory, searchForW
       alert('An error occurred. Please try again.');
     }
   };
-  
-
 
   return (
     <header className="header">
@@ -59,7 +57,7 @@ const Header = ({ theme, toggleTheme, changeFont, fetchSearchHistory, searchForW
       <div className="right-controls">
         <select
           onChange={(e) => changeFont(e.target.value)}
-          defaultValue={localStorage.getItem('font') || 'serif'}
+          value={localStorage.getItem('font') || 'serif'}
         >
           <option value="serif">Serif</option>
           <option value="sans-serif">Sans Serif</option>
@@ -73,7 +71,6 @@ const Header = ({ theme, toggleTheme, changeFont, fetchSearchHistory, searchForW
         />
       </div>
 
-      {/* History Popout */}
       {isHistoryOpen && (
         <div className={`history-popout ${theme}`}>
           <div className="history-header">
