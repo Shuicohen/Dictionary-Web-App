@@ -1,0 +1,22 @@
+/* Light Theme */
+.light {
+    --background-color: #ffffff;
+    --text-color: #2b2b2b;
+    --card-background: #f9f9f9;
+    --accent-color: #6c63ff;
+    --border-color: #ccc;
+    --input-background: #ffffff;
+    --font-family: serif;
+  }
+  
+  /* Dark Theme */
+  .dark {
+    --background-color: #050505;
+    --text-color: #ffffff;
+    --card-background: #1a1a1a;
+    --accent-color: #9c88ff;
+    --border-color: #444;
+    --input-background: #1a1a1a;
+    --font-family: serif;
+  }
+  
