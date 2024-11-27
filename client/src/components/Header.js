@@ -23,7 +23,7 @@ const Header = ({ theme, toggleTheme, changeFont, fetchSearchHistory, searchForW
 
   const handleDeleteHistory = async (word) => {
     try {
-      const response = await fetch('http://localhost:5000/api/words/delete-history', {
+      const response = await fetch('https://dictionary-web-app-3mjz.onrender.com/api/words/delete-history', {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ word }),
