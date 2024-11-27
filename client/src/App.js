@@ -77,33 +77,32 @@ const App = () => {
 
   return (
     <div className={`app ${theme} ${font}`}>
-      <Header
-        theme={theme}
-        toggleTheme={toggleTheme}
-        changeFont={changeFont}
-        fetchSearchHistory={fetchSearchHistory}
-        searchForWord={searchForWord} // Pass the search function to the Header
-      />
-      <SearchBar
-        setWordData={(data) => {
-          setWordData(data);
-          const searchedWord = data[0]?.word;
-          if (searchedWord) {
-            setSearchedWords((prev) => [...new Set([...prev, searchedWord])]);
-            saveWordToHistory(searchedWord); // Automatically save word
-          }
-        }}
-      />
-      {wordData && (
-  <WordDetails
-    data={wordData}
-    fetchSearchHistory={fetchSearchHistory} // Pass the fetch function
-    searchForWord={searchForWord} // Pass the search function
-    theme={theme} // Pass the current theme
+  <Header
+    theme={theme}
+    toggleTheme={toggleTheme}
+    changeFont={changeFont}
+    fetchSearchHistory={fetchSearchHistory}
+    searchForWord={searchForWord}
   />
-)}
-
-    </div>
+  <SearchBar
+    setWordData={(data) => {
+      setWordData(data);
+      const searchedWord = data[0]?.word;
+      if (searchedWord) {
+        setSearchedWords((prev) => [...new Set([...prev, searchedWord])]);
+        saveWordToHistory(searchedWord); // Automatically save word
+      }
+    }}
+  />
+  {wordData && (
+    <WordDetails
+      data={wordData}
+      fetchSearchHistory={fetchSearchHistory}
+      searchForWord={searchForWord}
+      theme={theme}
+    />
+  )}
+</div>
   );
 };
 
