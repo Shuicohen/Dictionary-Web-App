@@ -24,7 +24,7 @@ const App = () => {
   // Save the searched word to the backend
   const saveWordToHistory = async (word) => {
     try {
-      const response = await fetch('http://localhost:5000/api/words/store-history', {
+      const response = await fetch('https://dictionary-web-app-3mjz.onrender.com/api/words/store-history', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ searchedWords: [word] }), // Send single word to backend
@@ -41,7 +41,7 @@ const App = () => {
   // Fetch search history from the backend
   const fetchSearchHistory = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/words/history');
+      const response = await fetch('https://dictionary-web-app-3mjz.onrender.com/api/words/history');
       if (!response.ok) {
         throw new Error('Failed to fetch search history');
       }
@@ -57,7 +57,7 @@ const App = () => {
   // Search for a word and update the word data
   const searchForWord = async (word) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/words/${word}`);
+      const response = await fetch(`https://dictionary-web-app-3mjz.onrender.com/api/words/${word}`);
       if (response.ok) {
         const data = await response.json();
         setWordData(data);
