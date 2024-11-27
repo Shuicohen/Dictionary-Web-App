@@ -266,3 +266,20 @@ body {
 .word-details {
     position: relative;
 }
+.serif {
+    font-family: 'Georgia', serif;
+  }
+  
+  .sans-serif {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .monospace {
+    font-family: 'Courier New', monospace;
+  }
+  
+  /* Transition for smooth changes */
+  .app {
+    transition: background-color 0.3s ease, color 0.3s ease, font-family 0.3s ease;
+  }
+  
