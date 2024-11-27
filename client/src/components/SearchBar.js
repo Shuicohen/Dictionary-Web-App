@@ -11,7 +11,7 @@ const SearchBar = ({ setWordData }) => {
     }
 
     try {
-      const response = await axios.get(`http://localhost:5000/api/words/${input}`);
+      const response = await axios.get(`https://dictionary-web-app-3mjz.onrender.com/api/words/${input}`);
       console.log('Fetched data:', response.data); // Log the data for debugging
       setWordData(response.data); // Update state with the full response
       setInput('');
